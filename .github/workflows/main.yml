@@ -22,5 +22,5 @@ jobs:
           aws-region: ${{ secrets.AWS_region}}
       
       - name: Sync files to s3 
-        runs:
+        run:
           aws s3 sync . s3 ://${{ secrets.S3_bucket}} --delete --exclude ".git/*" --exclude ".github/*"
